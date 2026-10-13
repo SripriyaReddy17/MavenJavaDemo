@@ -5,4 +5,3 @@ Testing GitHub webhook trigger again
 Testing automatic Jenkins build after SCM configuration
 Final webhook trigger test
 Testing automatic Jenkins build trigger
-Testing automatic Jenkins build trigger - final check
