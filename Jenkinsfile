@@ -1,3 +1,4 @@
+```groovy
 pipeline {
     agent any
 
@@ -10,29 +11,27 @@ pipeline {
     }
 
     stages {
-        stage('Git Clone & Clean') {
+        stage('Clean') {
             steps {
-                deleteDir()
-                bat 'git clone https://github.com/SripriyaReddy17/MavenJavaDemo.git mavenjava'
-                bat 'mvn -f mavenjava/pom.xml clean'
+                bat 'mvn clean'
             }
         }
 
         stage('Install') {
             steps {
-                bat 'mvn -f mavenjava/pom.xml install'
+                bat 'mvn install'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn -f mavenjava/pom.xml test'
+                bat 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
-                bat 'mvn -f mavenjava/pom.xml package'
+                bat 'mvn package'
             }
         }
     }
@@ -46,3 +45,4 @@ pipeline {
         }
     }
 }
+```
